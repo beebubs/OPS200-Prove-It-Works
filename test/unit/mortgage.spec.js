@@ -12,12 +12,19 @@ describe('Mortgage Calculator', () => {
 	expect(mortgage.monthlyPayment).to.exist;
 	});
 
-    it('should have a monthly interest rate variable', () => {
-        expect(mortgage.monthlyInterestRate).to.exist;
-        });
+    it('should return a number', () => {
+        expect(mortgage.monthlyPayment(1, 2, 3, 4)).to.be.a('number');
+    });
 
-    it('should use to fixed notation to round number', () => {
-        expect(mortgage.monthlyPayment(2.222222)).to.equal(2.22);
-        });
+    it('should calculate mortgage Payment correctly', () => {
+        expect(mortgage.monthlyPayment(500000, 5, 20, 10)).to.equal(3960.69);
+    });
+
+    it('function should have four parameters', () => {
+        expect(mortgage.monthlyPayment).to.have.lengthOf(4);
+    });
+    
+    
+
 
 });

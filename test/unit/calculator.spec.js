@@ -23,5 +23,9 @@ describe('Calculator', () => {
     it('should subtract 2 - 2 together correctly', () => {
     expect(calculator.subtract(2, 2)).to.equal(0);
     });
+
+	it('should return a number', () => {
+        expect(calculator.subtract(3, 2)).to.be.a('number');
+    });
 });
 
