@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 const Mortgage = require('./lib/Mortgage');
 
 export default class App extends Component {
@@ -40,7 +41,7 @@ export default class App extends Component {
             this.state.interestRate,
             this.state.loanTerm,
             this.state.period)
-        let monthlyPayment = mortgage.monthlyPayment()
+        let monthlyPayment = mortgage.monthlyPayment(this.state.principal, this.state.interestRate, this.state.loanTerm, this.state.period)
         let monthly = document.getElementById('output')
         monthly.innerText = "$" + monthlyPayment
     }

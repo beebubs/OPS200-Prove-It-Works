@@ -40,5 +40,30 @@ it('should contain a <h1> element for the page title', () => {
 		});
 	});
 
+it('should correctly calculate mortgage', () =>
+pageObject
+.wait()
+.type('input[name=principal]', 300000)
+.type('input[name=interestRate]', 3.75)
+.type('input[name=loanTerm]', 30)
+.select('select[name=period]', 12)
+.click('button#calculate')
+.wait('#output')
+.evaluate(() => document.querySelector('#output').innerText)
+.then((outputText) => {
+	expect(outputText).to.equal('$1389.35');
+})
+).timeout(6500);
+
+// it('should contain a <option> element for monthly', () => { 
+// 	return pageObject
+// 		.evaluate(() => document.querySelector('option').innerText)
+// 		.then(optionText => {
+// 		expect(optionText).to.not.be.null;
+// 		expect(optionText).to.equal('Monthly');
+// 		});
+// 	});
+
+
 
 })
