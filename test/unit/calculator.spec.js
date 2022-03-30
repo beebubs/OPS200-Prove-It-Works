@@ -27,5 +27,13 @@ describe('Calculator', () => {
 	it('should return a number', () => {
         expect(calculator.subtract(3, 2)).to.be.a('number');
     });
+
+	it('subtract function should have two parameters', () => {
+        expect(calculator.subtract).to.have.lengthOf(2);
+    });
+
+	it('add function should have two parameters', () => {
+        expect(calculator.add).to.have.lengthOf(2);
+    });
 });
 

@@ -55,14 +55,59 @@ pageObject
 })
 ).timeout(6500);
 
-// it('should contain a <option> element for monthly', () => { 
-// 	return pageObject
-// 		.evaluate(() => document.querySelector('option').innerText)
-// 		.then(optionText => {
-// 		expect(optionText).to.not.be.null;
-// 		expect(optionText).to.equal('Monthly');
-// 		});
-// 	});
+it('should contain a <option> element for monthly', () => { 
+	return pageObject
+		.evaluate(() => document.querySelector('option').innerText)
+		.then(output => {
+		expect(output).to.not.be.null;
+		expect(output).to.equal('Monthly');
+		});
+	});
+
+it('should contain a <button> with text Calculate', () => { 
+	return pageObject
+		.evaluate(() => document.querySelector('button').innerText)
+		.then(output => {
+		expect(output).to.not.be.null;
+		expect(output).to.equal('Calculate');
+		});
+	});
+
+it('should contain a <input> element for principal', () => { 
+	return pageObject
+		.evaluate(() => document.querySelector('input[name=principal]'))
+		.then(output => {
+		expect(output).to.not.be.null;
+		expect(output).to.exist;
+		});
+	});
+
+it('should contain a <input> element for loan term', () => { 
+	return pageObject
+		.evaluate(() => document.querySelector('input[name=loanTerm]'))
+		.then(output => {
+		expect(output).to.not.be.null;
+		expect(output).to.exist;
+		});
+	});
+
+it('should contain a <input> element for interest rate', () => { 
+	return pageObject
+		.evaluate(() => document.querySelector('input[name=interestRate]'))
+		.then(output => {
+		expect(output).to.not.be.null;
+		expect(output).to.exist;
+		});
+	});
+
+it('should contain a <p> element with id output', () => { 
+	return pageObject
+		.evaluate(() => document.querySelector('p[id=output]'))
+		.then(output => {
+		expect(output).to.not.be.null;
+		expect(output).to.exist;
+		});
+	});
 
 
 

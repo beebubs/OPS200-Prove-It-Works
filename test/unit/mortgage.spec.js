@@ -23,6 +23,12 @@ describe('Mortgage Calculator', () => {
     it('function should have four parameters', () => {
         expect(mortgage.monthlyPayment).to.have.lengthOf(4);
     });
+
+    it('should return a positive number', () => {
+        expect(mortgage.monthlyPayment(1, 2, 3, 4)).to.be.within(0, Infinity);
+    });
+
+    
     
     
 
